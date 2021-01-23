@@ -1,6 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'application'
-mainClassName = "MyFirstProgram"
+
 
 //указываем откуда загружать дополнителные библитоеки для testit
 repositories {
