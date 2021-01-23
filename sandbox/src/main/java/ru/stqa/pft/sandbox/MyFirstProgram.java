@@ -7,10 +7,10 @@ public class MyFirstProgram {
 		hello("Hello");
 
     	Square s = new Square(4);
-		System.out.println("Square = " + area(s));
+		System.out.println("Square = " + s.area());
 
 		Rectangle r = new Rectangle(4, 6);
-		System.out.println("Rectangle = " + area(r));
+		System.out.println("Rectangle = " + r.area());
 
     	hello("Bye");
 
@@ -19,11 +19,7 @@ public class MyFirstProgram {
 	public static void hello(String somebody) {
 		System.out.println(somebody + " ______ " + "!!!");
 	}
-	public static double area(Square s){
-    	return s.l * s.l;
-	}
-	public static double area(Rectangle r){
-		return r.a * r.b;
-	}
+
+
 
 }
