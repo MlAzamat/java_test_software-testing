@@ -4,10 +4,28 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbookWebTests" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/addressbookWebTests" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/sandbox" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/sandbox" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/test3" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/test3" />
           </set>
         </option>
       </GradleProjectSettings>

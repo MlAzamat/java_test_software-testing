@@ -1,5 +1,6 @@
 apply plugin: 'java'
-
+apply plugin: 'application'
+mainClassName = "AddressbookWebTests"
 
 //указываем откуда загружать дополнителные библитоеки для testit
 repositories {
@@ -9,4 +10,5 @@ repositories {
 //дикларация зависимости. загружаем фреймворк testng https://search.maven.org/artifact/org.testng/testng/7.3.0/jar
 dependencies {
     implementation 'org.testng:testng:7.3.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-7'
 }
