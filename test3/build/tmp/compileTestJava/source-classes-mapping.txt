@@ -1,0 +1,3 @@
+ru/stqa/pft/addressbookTest3/TestCreateGroup.java
+ ru.stqa.pft.addressbookTest3.TestCreateGroup
+ ru.stqa.pft.addressbookTest3.TestCreateGroup$UntitledTestCase

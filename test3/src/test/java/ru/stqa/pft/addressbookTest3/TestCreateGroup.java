@@ -9,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class TestCreateGroup {
+
     public class UntitledTestCase {
         private WebDriver driver;
         private String baseUrl;
@@ -80,4 +81,5 @@ public class TestCreateGroup {
                 acceptNextAlert = true;
             }
         }
+    }
 }
