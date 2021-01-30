@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestCreateGroup {
 
-    public class UntitledTestCase {
+    public static class UntitledTestCase {
         private WebDriver driver;
         private String baseUrl;
         private boolean acceptNextAlert = true;
