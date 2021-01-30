@@ -1,12 +1,10 @@
 package ru.stqa.pft.addressbookTest3;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class TestCreateGroup {
 
@@ -21,16 +19,21 @@ public class TestCreateGroup {
             driver = new FirefoxDriver();
             baseUrl = "https://www.google.com/";
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            login();
+        }
+
+        private void login() {
+            driver.get("http://localhost/addressbook/");
+            driver.findElement(By.linkText("groups")).click();
         }
 
         @Test
         public void testUntitledTestCase() throws Exception {
-            driver.get("http://localhost/addressbook/");
-            driver.findElement(By.linkText("groups")).click();
-            driver.findElement(By.name("new")).click();
-            driver.findElement(By.name("group_name")).click();
-            driver.findElement(By.name("group_name")).clear();
-            driver.findElement(By.name("group_name")).sendKeys("test1");
+
+            clickNewCreateGroup("new");
+            clickNameField();
+            clearNameField();
+            fillNameField();
             driver.findElement(By.name("group_header")).click();
             driver.findElement(By.name("group_header")).clear();
             driver.findElement(By.name("group_header")).sendKeys("test2");
@@ -38,6 +41,22 @@ public class TestCreateGroup {
             driver.findElement(By.name("group_footer")).clear();
             driver.findElement(By.name("group_footer")).sendKeys("test3");
             driver.findElement(By.name("submit")).click();
+        }
+
+        private void fillNameField() {
+            driver.findElement(By.name("group_name")).sendKeys("test1");
+        }
+
+        private void clearNameField() {
+            driver.findElement(By.name("group_name")).clear();
+        }
+
+        private void clickNameField() {
+            driver.findElement(By.name("group_name")).click();
+        }
+
+        private void clickNewCreateGroup(String s) {
+            driver.findElement(By.name(s)).click();
         }
 
         @AfterClass(alwaysRun = true)
