@@ -13,9 +13,9 @@ public class DeleteGroup extends TestBase {
 
   @Test
   public void testUntitledTestCase() throws Exception {
-    clickGroup();
-    deleteGroup();
-    returnGroup();
+    app.clickGroup();
+    app.deleteGroup();
+    app.returnGroup();
   }
 
 }
