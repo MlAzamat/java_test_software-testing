@@ -1,15 +1,14 @@
 package ru.stqa.pft.addressbookTest4;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-
-import org.testng.annotations.*;
-
-import static org.testng.Assert.*;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.fail;
 
 public class CreateGroup {
 
@@ -24,13 +23,14 @@ public class CreateGroup {
         driver = new FirefoxDriver();
         baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.get("http://localhost/addressbook/");
+        driver.findElement(By.xpath("//html")).click();
+        driver.findElement(By.xpath("//input[@value='Login']")).click();
     }
 
     @Test
     public void testUntitledTestCase() throws Exception {
-        driver.get("http://localhost/addressbook/");
-        driver.findElement(By.xpath("//html")).click();
-        driver.findElement(By.xpath("//input[@value='Login']")).click();
+
         driver.findElement(By.linkText("groups")).click();
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).click();
@@ -44,11 +44,12 @@ public class CreateGroup {
         driver.findElement(By.name("group_footer")).sendKeys("1113");
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("groups")).click();
-        driver.findElement(By.linkText("Logout")).click();
+
     }
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
+        driver.findElement(By.linkText("Logout")).click();
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
@@ -88,6 +89,6 @@ public class CreateGroup {
             acceptNextAlert = true;
         }
     }
-    
+
 
 }
