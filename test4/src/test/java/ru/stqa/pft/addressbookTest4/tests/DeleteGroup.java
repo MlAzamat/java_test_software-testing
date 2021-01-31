@@ -13,8 +13,8 @@ public class DeleteGroup extends TestBase {
 
   @Test
   public void testUntitledTestCase() throws Exception {
-    app.clickGroup();
-    app.deleteGroup();
+    app.getGroupHelper().clickGroup();
+    app.getGroupHelper().deleteGroup();
     app.returnGroup();
   }
 

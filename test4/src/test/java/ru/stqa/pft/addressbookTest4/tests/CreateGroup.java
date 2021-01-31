@@ -8,10 +8,10 @@ public class CreateGroup extends TestBase{
 
     @Test
     public void testUntitledTestCase() throws Exception {
-        app.clickGroup();
-        app.newGroup();
-        app.fillNewGroup(new GroupDate("111", "1112", "1113"));
-        app.saveNewGroup();
+        app.getGroupHelper().clickGroup();
+        app.getGroupHelper().newGroup();
+        app.getGroupHelper().fillNewGroup(new GroupDate("111", "1112", "1113"));
+        app.getGroupHelper().saveNewGroup();
         app.returnGroup();
     }
 
