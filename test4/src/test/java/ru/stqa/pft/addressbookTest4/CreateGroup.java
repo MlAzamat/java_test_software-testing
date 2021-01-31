@@ -17,6 +17,7 @@ public class CreateGroup {
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
+    private GroupDate groupDate;
 
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
@@ -39,7 +40,7 @@ public class CreateGroup {
     @Test
     public void testUntitledTestCase() throws Exception {
         newGroup();
-        fillNewGroup("111", "1112", "1113");
+        fillNewGroup(new GroupDate("111", "1112", "1113"));
         saveNewGroup();
         returnGroup();
     }
@@ -52,16 +53,17 @@ public class CreateGroup {
         driver.findElement(By.name("submit")).click();
     }
 
-    private void fillNewGroup(String text1, String text2, String text3) {
+    private void fillNewGroup(GroupDate groupDate) {
+      //  this.groupDate = groupDate;
         driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).clear();
-        driver.findElement(By.name("group_name")).sendKeys(text1);
+        driver.findElement(By.name("group_name")).sendKeys(groupDate.getText1());
         driver.findElement(By.name("group_header")).click();
         driver.findElement(By.name("group_header")).clear();
-        driver.findElement(By.name("group_header")).sendKeys(text2);
+        driver.findElement(By.name("group_header")).sendKeys(groupDate.getText2());
         driver.findElement(By.name("group_footer")).click();
         driver.findElement(By.name("group_footer")).clear();
-        driver.findElement(By.name("group_footer")).sendKeys(text3);
+        driver.findElement(By.name("group_footer")).sendKeys(groupDate.getText3());
     }
 
     private void newGroup() {
