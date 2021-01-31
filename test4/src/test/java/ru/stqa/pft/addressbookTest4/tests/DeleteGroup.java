@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbookTest4;
+package ru.stqa.pft.addressbookTest4.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;

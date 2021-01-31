@@ -1,6 +1,7 @@
-package ru.stqa.pft.addressbookTest4;
+package ru.stqa.pft.addressbookTest4.tests;
 
 import org.testng.annotations.Test;
+import ru.stqa.pft.addressbookTest4.model.GroupDate;
 
 public class CreateGroup extends TestBase{
 

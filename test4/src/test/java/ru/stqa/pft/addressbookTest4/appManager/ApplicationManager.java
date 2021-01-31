@@ -1,7 +1,8 @@
-package ru.stqa.pft.addressbookTest4;
+package ru.stqa.pft.addressbookTest4.appManager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.stqa.pft.addressbookTest4.model.GroupDate;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +13,7 @@ public class ApplicationManager {
     private boolean acceptNextAlert = true;
     private GroupDate groupDate;
 
-    protected void openSite() {
+    public void openSite() {
         driver = new FirefoxDriver();
         //  baseUrl = "https://www.google.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -20,7 +21,7 @@ public class ApplicationManager {
         driver.findElement(By.xpath("//html")).click();
     }
 
-    protected void login() {
+    public void login() {
     driver.findElement(By.id("LoginForm")).click();
     driver.findElement(By.name("user")).clear();
     driver.findElement(By.name("user")).sendKeys("admin");
@@ -30,15 +31,15 @@ public class ApplicationManager {
     driver.findElement(By.xpath("//input[@value='Login']")).click();
     }
 
-    protected void returnGroup() {
+    public void returnGroup() {
         driver.findElement(By.linkText("groups")).click();
     }
 
-    protected void saveNewGroup() {
+    public void saveNewGroup() {
         driver.findElement(By.name("submit")).click();
     }
 
-    protected void fillNewGroup(GroupDate groupDate) {
+    public void fillNewGroup(GroupDate groupDate) {
         driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).clear();
         driver.findElement(By.name("group_name")).sendKeys(groupDate.getText1());
@@ -50,16 +51,16 @@ public class ApplicationManager {
         driver.findElement(By.name("group_footer")).sendKeys(groupDate.getText3());
     }
 
-    protected void newGroup() {
+    public void newGroup() {
         driver.findElement(By.name("new")).click();
     }
 
-    protected void logOut() {
+    public void logOut() {
         driver.findElement(By.linkText("Logout")).click();
         driver.quit();
     }
 
-    private boolean isElementPresent(By by) {
+    public boolean isElementPresent(By by) {
         try {
             driver.findElement(by);
             return true;
@@ -68,11 +69,11 @@ public class ApplicationManager {
         }
     }
 
-    protected void clickGroup() {
+    public void clickGroup() {
       driver.findElement(By.linkText("groups")).click();
     }
 
-    private boolean isAlertPresent() {
+    public boolean isAlertPresent() {
         try {
             driver.switchTo().alert();
             return true;
@@ -81,7 +82,7 @@ public class ApplicationManager {
         }
     }
 
-    private String closeAlertAndGetItsText() {
+    public String closeAlertAndGetItsText() {
         try {
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
@@ -96,7 +97,7 @@ public class ApplicationManager {
         }
     }
 
-    protected void deleteGroup() {
+    public void deleteGroup() {
       driver.findElement(By.name("selected[]")).click();
       driver.findElement(By.name("delete")).click();
     }

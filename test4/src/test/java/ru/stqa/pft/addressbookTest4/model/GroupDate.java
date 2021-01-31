@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbookTest4;
+package ru.stqa.pft.addressbookTest4.model;
 
 public class GroupDate {
     private final String text1;
